@@ -1,0 +1,32 @@
+
+<script type='text/javascript' src="http://code.highcharts.com/highcharts.js"></script>
+<script type='text/javascript' src="http://code.highcharts.com/modules/exporting.js"></script>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<h2> Add a point </h2>
+
+<p>Value: <input type="text" id="point_value"></p>
+<p>Text: <input type="text" id="point_text"></p>
+<p><input type="submit" onclick=postWithAjax()></p>
+
+<script>
+function postWithAjax() {
+  $.ajax({
+    type: 'POST',
+    url: '/graph/<%= @graph_data.only['Id'] %>/point',
+    dataType: 'json',
+    data: {
+      'point_value': $('#point_value').val(),
+      'point_text': $('#point_text').val(),
+      'graph_id': <%= @graph_data.only['Id'] %>
+    },
+    success: function(data, textStatus) { 
+      window.location.replace('/graph/<%= @graph_data.only['Id'] %>' );
+    },
+    error: function(xhr, textStatus, errorThrown) {
+      alert(textStatus + ', ' + errorThrown);
+    } 
+  });
+}
+
+</script>
