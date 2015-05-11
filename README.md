@@ -1,0 +1,1 @@
+Run empty_database.rb the first time and whenever you want to empty the database. Run main.rb to start the server.
