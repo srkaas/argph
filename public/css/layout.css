@@ -2,3 +2,7 @@ body {
 	margin:40px;
 	margin-top:80px;
 }
+
+.faint {
+	color: #777777;
+}

@@ -5,9 +5,20 @@
 
 <h2> Add a point </h2>
 
-<p>Value: <input type="text" id="point_value"></p>
-<p>Text: <input type="text" id="point_text"></p>
-<p><input type="submit" onclick=postWithAjax()></p>
+<table>
+  <tr>
+    <td>Value: </td>
+    <td><input type="text" id="point_value"></td>
+  </tr>
+  <tr>
+    <td> Text: </td>
+    <td><input type="text" id="point_text"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><input type="submit" onclick=postWithAjax()></td>
+  </tr>
+</table>
 
 <script>
 function postWithAjax() {
